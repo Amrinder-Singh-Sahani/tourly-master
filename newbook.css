@@ -1,0 +1,122 @@
+/* .root{
+    position: absolute;
+} */
+
+
+/* .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+} */
+
+/* The popup form - hidden by default */
+/* .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+} */
+
+/* .newbook-container {
+    display: none;
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* .newbook-container{
+    display: none;
+    width: 0%;
+} */
+
+/* Add styles to the form container */
+/* .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+} */
+
+/* Full-width input fields */
+/* .form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+} */
+
+/* When the inputs get focus, change background color */
+/* .form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+} */
+
+@media (min-width: 992px) {
+    .tour-search-form {
+        /* grid-template-columns: repeat(5, 1fr); */
+        grid-template-columns: none !important; 
+        
+    }
+}
+
+@media (min-width: 580px) {
+    .tour-search-form {
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-end;
+        gap: 15px;
+    }
+}
+.search-tour {
+    background: hsl(214, 57%, 51%);
+    padding-block: 40px;
+  }
+/* Style for the submit/login button */
+/* .form-container .close {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+} */
+
+
+.close {
+    /* margin-right: 30%; */
+    margin-left: 332px;
+    position: absolute;
+    margin-top: -28px;
+    border: 2px solid;
+    border-radius: 50px;
+    padding: 8px;
+    padding-inline: 25px;
+    border-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+    transition: 0.25s ease-in-out;
+}
+
+.close:is(:hover, :focus) {
+    background: hsla(0, 0%, 100%, 0.1);
+}
+
+
+/* Hover effects for buttons */
+/* .form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+} */

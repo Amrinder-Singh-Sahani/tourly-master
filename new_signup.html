@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+
+<body style="background-color: hsl(214, 57%, 51%);">
+    <div class="signup-bcg-img">
+
+        <div class="login-container">
+            <form class = "login-form" id = "login-form" action="signup.php" method="post">
+                <h2>Sign Up</h2>
+                <div class="signup-wrapper">
+                <!-- <div class="input-wrapper"> -->
+                <!-- <div id="input-wrapper"> -->
+                    <label for="username" class="input-label">Username</label>
+                    <input type="text" id="username" name="username" class="input-field">
+                </div>
+                <div class="signup-wrapper">
+                <!-- <div class="input-wrapper"> -->
+                <!-- <div id="email-wrapper"> -->
+                    <label for="email" class = "input-label">Email</label>
+                    <input type="email" id="email" name="email" class = "input-field">
+                </div>
+                <div class="signup-wrapper">
+                <!-- <div class="input-wrapper"> -->
+                <!-- <div id="email-wrapper"> -->
+                    <label for="phone" class = "input-label">Phone No</label>
+                    <input type="number" id="phone" name="phone" class = "input-field">
+                </div>
+                <div class="signup-wrapper">
+                <!-- <div class="input-wrapper"> -->
+                    <label for="password" class = "input-label">Password</label>
+                    <input type="password" id="password" name="password" class = "input-field">
+                </div>
+                <div class="signup-wrapper">
+                <!-- <div class="input-wrapper"> -->
+                    <label for="password" class = "input-label">Confirm Password</label>
+                    <input type="password" id="pass2" name="password" class = "input-field">
+                </div>
+
+                <!-- <div class="input-wrapper">
+                    <label for="password" class = "input-field">Password</label>
+                    <input type="password" id="password" name="password" class="input-field">
+                </div> -->
+                <button type="submit" class="btn btn-primary">Sign</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- 
+  - favicon
+-->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- 
+  - custom css link
+-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="newbook.css">
+
+    <!-- 
+  - google font link
+-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Ensure the form doesn't affect layout */
+        /*.newbook-container {
+            display: none;
+            position: fixed;
+            top: 53%;
+            border: none;
+            height: 450px;
+            border-radius: 30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-width: 900px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 494px;
+        }*/
+        /* to shorten and the pop up form */
+        .newbook-container {
+            display: none;
+            position: fixed;
+            top: 53%;
+            border: none;
+            height: 450px;
+            border-radius: 30px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-width: 900px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 424px;
+        }
+
+        .package-card {
+            position: relative;
+        }
+
+        .package-card img {
+            height: auto;
+            display: block;
+        }
+
+        .btn-secondary {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="package" id="package">
+        <div class="container">
+
+            <p class="section-subtitle">Popular PACKAGES</p>
+
+            <h2 class="h2 section-title">Checkout Our PACKAGES</h2>
+
+            <p style="visibility: hidden;" class="section-text">
+                Check out the best package as per your needs.
+            </p>
+
+            <ul class="package-list">
+
+                <li>
+                    <div class="package-card">
+
+                        <figure class="card-banner">
+                            <img src="./assets/images/samrantrang.webp" alt="Experience The Great Holiday On Beach"
+                                loading="lazy">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <h3 class="h3 card-title">Private beach house in Hat Samran Trang</h3>
+
+                            <p class="card-text">
+                                Perfect for relaxing, hanging out in the form of family or friends, as well as staying
+                                at Long stay or Work from Anywhere with all the amenities.
+                            </p>
+
+                            <ul class="card-meta-list">
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/time.png" class="icon">
+
+                                        <p class="text">7D/6N</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/people.png" class="icon">
+
+                                        <p class="text">pax: 10</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/location.png" class="icon">
+
+                                        <p class="text">Malaysia</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-price">
+
+                            <div class="wrapper">
+
+                                <p class="reviews">(25 reviews)</p>
+                                <!-- <div class = "form-popup" id = "myForm"></div> -->
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+
+                            </div>
+
+                            <p class="price">
+                                $750
+                                <span>/ per person</span>
+                            </p>
+
+                            <!-- <button class="btn btn-secondary">Book Now</button> -->
+                            <button type="button" class="btn btn-secondary" onclick="openForm()">Book Now</button>
+
+                        </div>
+                        <section class="search-tour newbook-container" id="myForm">
+                            <div class="container">
+                                <!-- <div class = "form-container"> -->
+                                <button type="button" class="close" onclick="closeForm()">X</button>
+                                <form action="booking.php" method="post" class="tour-search-form form-container">
+
+                                    <!-- <div class="input-wrapper">
+                                            <label for="destination" class="input-label">Search Destination*</label>
+                                            
+                                            <input type="text" name="destination" id="destination" required
+                                            placeholder="Enter Destination" class="input-field">
+                                        </div> -->
+
+                                    <div class="input-wrapper">
+                                        <label for="people" class="input-label">Pax Number*</label>
+
+                                        <input type="number" name="people" id="people" required
+                                            placeholder="No.of People" class="input-field">
+                                    </div>
+                                    <input type="hidden" id="getEmail" name="email">
+                                    <input type="hidden" name="product" value="Malaysia">
+
+                                    <div class="input-wrapper">
+                                        <label for="checkin" class="input-label">Checkin Date**</label>
+
+                                        <input type="date" name="checkin" id="checkin" required class="input-field">
+                                    </div>
+
+                                    <div class="input-wrapper">
+                                        <label for="checkout" class="input-label">Checkout Date*</label>
+
+                                        <input type="date" name="checkout" id="checkout" required class="input-field">
+                                    </div>
+
+                                    <button type="submit" style="margin-inline: 140px;"
+                                        class="btn btn-secondary">Submit</button>
+
+                                </form>
+                                <!-- </div> -->
+
+                            </div>
+                        </section>
+
+                        <script>
+
+                            function openForm() {
+                                document.getElementById("myForm").style.display = "block";
+                            }
+
+                            function ox() {
+                                document.getElementById("ox").style.display = "block";
+                            }
+                            function santorini() {
+                                document.getElementById("santorini").style.display = "block";
+                            }
+                            function closeForm() {
+                                document.getElementById("myForm").style.display = "none";
+                                document.getElementById("ox").style.display = "none";
+                                document.getElementById("santorini").style.display = "none";
+                            }
+                        </script>
+
+                        <!-- Take user email from the url -->
+                        <script>
+                            window.onload = function () {
+                                // Get the current URL
+                                var url = new URL(window.location.href);
+
+                                // Use URLSearchParams interface to work with the query string
+                                var params = new URLSearchParams(url.search);
+
+                                // Get the value of a specific parameter
+                                var email = params.get('email');
+
+                                // Now you can use this value in your HTML
+                                document.getElementById('getEmail').value = email;
+                                document.getElementById('getox').value = email;
+                                document.getElementById('getsan').value = email;
+                            }
+                        </script>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="package-card">
+
+                        <figure class="card-banner">
+                            <img src="./assets/images/packege-2.jpg" alt="Summer Holiday To The Oxolotan River"
+                                loading="lazy">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <h3 class="h3 card-title">Summer Holiday To The Oxolotan River</h3>
+
+                            <p class="card-text">
+                                Come enjoy a pleasant afternoon with your family in the Malecón de Chiltepec, a wide
+                                variety of restaurants at your fingertips, a relaxing afternoon enjoying a spectacular
+                                view with us.
+                            </p>
+
+                            <ul class="card-meta-list">
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/time.png" class="icon">
+
+                                        <p class="text">7D/6N</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/people.png" class="icon">
+
+                                        <p class="text">pax: 10</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/location.png" class="icon">
+
+                                        <p class="text">Mexico</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-price">
+
+                            <div class="wrapper">
+
+                                <p class="reviews">(20 reviews)</p>
+
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+
+                            </div>
+
+                            <p class="price">
+                                $520
+                                <span>/ per person</span>
+                            </p>
+
+                            <button class="btn btn-secondary" onclick="ox()">Book Now</button>
+
+                        </div>
+                        <section class="search-tour newbook-container" id="ox">
+                            <div class="container">
+                                <!-- <div class = "form-container"> -->
+                                <button type="button" class="close" onclick="closeForm()">X</button>
+                                <form action="booking.php" method="post" class="tour-search-form form-container">
+
+                                    <!-- <div class="input-wrapper">
+                                            <label for="destination" class="input-label">Search Destination*</label>
+                                            
+                                            <input type="text" name="destination" id="destination" required
+                                            placeholder="Enter Destination" class="input-field">
+                                        </div> -->
+
+                                    <div class="input-wrapper">
+                                        <label for="people" class="input-label">Pax Number*</label>
+
+                                        <input type="number" name="people" id="people" required
+                                            placeholder="No.of People" class="input-field">
+                                    </div>
+                                    <input type="hidden" id="getox" name="email">
+                                    <input type="hidden" name="product" value="Oxolotan River">
+                                    <input type="hidden" name="price">
+
+                                    <div class="input-wrapper">
+                                        <label for="checkin" class="input-label">Checkin Date**</label>
+
+                                        <input type="date" name="checkin" id="checkin" required class="input-field">
+                                    </div>
+
+                                    <div class="input-wrapper">
+                                        <label for="checkout" class="input-label">Checkout Date*</label>
+
+                                        <input type="date" name="checkout" id="checkout" required class="input-field">
+                                    </div>
+
+                                    <button type="submit" style="margin-inline: 140px;"
+                                        class="btn btn-secondary">Submit</button>
+
+                                </form>
+                                <!-- </div> -->
+
+                            </div>
+                        </section>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="package-card">
+
+                        <figure class="card-banner">
+                            <img src="./assets/images/packege-3.jpg" alt="Santorini Island's Weekend Vacation"
+                                loading="lazy">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <h3 class="h3 card-title">Santorini Island's Weekend Vacation</h3>
+
+                            <p class="card-text">
+                                The "Aristofanis Sunset Suite" will provide you with an exceptional and unforgettable
+                                experience.Book your stay with us at our luxurious hotel in Santorini and indulge in the
+                                ultimate vacation experience.
+
+                            </p>
+
+                            <ul class="card-meta-list">
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/time.png" class="icon">
+
+                                        <p class="text">7D/6N</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/people.png" class="icon">
+
+                                        <p class="text">pax: 10</p>
+                                    </div>
+                                </li>
+
+                                <li class="card-meta-item">
+                                    <div class="meta-box">
+                                        <img src="./assets/images/location.png" class="icon">
+
+                                        <p class="text">Greece</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div class="card-price">
+
+                            <div class="wrapper">
+
+                                <p class="reviews">(40 reviews)</p>
+
+                                <div class="card-rating">
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                    <ion-icon name="star"></ion-icon>
+                                </div>
+
+                            </div>
+
+                            <p class="price">
+                                $660
+                                <span>/ per person</span>
+                            </p>
+
+                            <button class="btn btn-secondary" onclick = "santorini()">Book Now</button>
+
+                        </div>
+                        <section class="search-tour newbook-container" id="santorini">
+                            <div class="container">
+                                <!-- <div class = "form-container"> -->
+                                <button type="button" class="close" onclick="closeForm()">X</button>
+                                <form action="booking.php" method="post" class="tour-search-form form-container">
+
+                                    <!-- <div class="input-wrapper">
+                                            <label for="destination" class="input-label">Search Destination*</label>
+                                            
+                                            <input type="text" name="destination" id="destination" required
+                                            placeholder="Enter Destination" class="input-field">
+                                        </div> -->
+
+                                    <div class="input-wrapper">
+                                        <label for="people" class="input-label">Pax Number*</label>
+
+                                        <input type="number" name="people" id="people" required
+                                            placeholder="No.of People" class="input-field">
+                                    </div>
+                                    <input type="hidden" id="getsan" name="email">
+                                    <input type="hidden" name="product" value="Santorini">
+
+                                    <div class="input-wrapper">
+                                        <label for="checkin" class="input-label">Checkin Date**</label>
+
+                                        <input type="date" name="checkin" id="checkin" required class="input-field">
+                                    </div>
+
+                                    <div class="input-wrapper">
+                                        <label for="checkout" class="input-label">Checkout Date*</label>
+
+                                        <input type="date" name="checkout" id="checkout" required class="input-field">
+                                    </div>
+
+                                    <button type="submit" style="margin-inline: 140px;"
+                                        class="btn btn-secondary">Submit</button>
+
+                                </form>
+                                <!-- </div> -->
+
+                            </div>
+                        </section>
+                    </div>
+                </li>
+
+            </ul>
+
+            <button class="btn btn-primary">View All Packages</button>
+
+        </div>
+    </section>
+</body>
+
+</html>

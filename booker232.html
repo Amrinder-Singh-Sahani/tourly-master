@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="Webpage.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstactic.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      display: flex;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-image {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .product-details {
+      flex: 2;
+    }
+
+    .product-title {
+      font-size: 28px;
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .product-description {
+      margin: 0 0 20px;
+      color: #666;
+    }
+
+    .product-price {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 20px;
+      color: #333;
+    }
+
+    .add-to-cart {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .add-to-cart:hover {
+      background-color: #0056b3;
+    }
+
+    .cart-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .cart-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Updated CSS for cart popup */
+    .cart-popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f8f9fa;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      display: none;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .cart-popup h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .cart-items-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+    
+    .cart-items-list li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-items-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .cart-item-title {
+      flex: 1;
+    }
+
+    .cart-item-quantity {                  
+      margin-right: 10px;
+      padding: 5px 10px;
+      border: 1px solid #007bff;
+      border-radius: 5px;
+    }
+
+    .cart-item-delete {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cart-item-delete:hover {
+      background-color: #c82333;
+    }
+
+    .cart-total {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+
+    .cart-total span {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .-btn:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+
+<body>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="#"><img src="nogo2.avif" alt="" /></a>
+        <!-- <div class="nav-links" id="navLinks">
+          <i class="fa fa times" onclick="hideMenu()"></i>
+          <i class="fa fa-times"></i>
+          <ul>
+            <li><a href="bakery.html"> HOME</a></li>
+            <li><a href="about.html"> ABOUT</a></li>
+            <li><a href="product.html"> PRODUCTS</a></li>
+            <li><a href="contact.html"> CONTACTS</a></li>
+            <li><a href="log.html"> LOGIN</a></li>
+          </ul>
+        </div> -->
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+     <h1>Our Packages</h1>
+    </section>
+
+<!-- <section>
+  <section class="new-sub-header">
+    <nav>
+      <a href="#"><img src="nogo2.avif" alt=""></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa times" onclick="hideMenu()"></i>
+        <i class="fa fa-times"></i>
+        <ul>
+          <li><a href="bakery.html"> HOME</a></li>
+          <li><a href="about.html"> ABOUT</a></li>
+          <li><a href="product.html"> PRODUCTS</a></li>
+          <li><a href="contact.html"> CONTACTS</a></li>
+          <li><a href="log.html"> LOGIN</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Our Products</h1> -->
+  </section>
+</section>
+
+<!-- <div class="w3-container">
+  <h2>Filter List</h2>
+  <p>Search for a name in the input field.</p>
+
+  <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+  <ul class="w3-ul w3-margin-top" id="myUL">
+    <li>bread</li>
+    <li>Cupcake</li>
+    <li>shake</li>
+    <li>cookies</li>
+    <li>Pastry</li>
+    <li>Christina</li>
+    <li>Cindy</li>
+  </ul>
+</div> -->
+
+<div class="container" id="product1">
+  <div class="product-image">
+    <img src="breads.jpg" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">PRIVATE BEACH HOUSE IN HAT SAMRAN TRANG</h1>
+    <p class="product-description">
+        Perfect for relaxing, hanging out in the form of family or friends, as well as staying at Long stay or Work from Anywhere with all the amenities.
+    </p>
+    <p class="product-price">$750
+        / per person</p>
+    <button class="add-to-cart" onclick="addToCart('PRIVATE BEACH HOUSE IN HAT SAMRAN TRANG', 750)">Book Now</button>
+  </div>
+</div>
+<div class="container" id="product1">
+  <div class="product-image">
+    <img src="bakeimg8.webp" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">SUMMER HOLIDAY TO THE OXOLOTAN RIVER</h1>
+    <p class="product-description">
+        Come enjoy a pleasant afternoon with your family in the Malecón de Chiltepec, a wide variety of restaurants at your fingertips, a relaxing afternoon enjoying a spectacular view with us.
+    </p>
+    <p class="product-price">$520
+        / per person</p>
+    <button class="add-to-cart" onclick="addToCart('SUMMER HOLIDAY TO THE OXOLOTAN RIVER', 520)">Book Now</button>
+  </div>
+</div>
+<div class="container" id="product1">
+  <div class="product-image">
+    <img src="chockl.jpg" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">SANTORINI ISLAND'S WEEKEND VACATION</h1>
+    <p class="product-description">
+        The "Aristofanis Sunset Suite" will provide you with an exceptional and unforgettable experience.Book your stay with us at our luxurious hotel in Santorini and indulge in the ultimate vacation experience.
+    </p>
+    <p class="product-price">$660
+        / per person</p>
+    <button class="add-to-cart" onclick="addToCart('SANTORINI ISLAND\'S WEEKEND VACATION', 660)">Book Now</button>
+  </div>
+</div>
+
+
+<div class="container" id="product2">
+  <div class="product-image">
+    <img src="blackforest.jpg" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">Entire chalet in Blattniksele , Sweden</h1>
+    <p class="product-description">
+        In summer our chalets are transformed into a Sport fly fishing lodge where we welcome fishers who practice Catch and Release only.
+        A quiet and Natural place that can also welcome anyone who loves the great outdoors at any seasons.
+    </p>
+    <p class="product-price">$ 150 / per person</p>
+    <button class="add-to-cart" onclick="addToCart('Entire chalet in Blattniksele , Sweden', 150)">Book Now</button>
+  </div>
+</div>
+
+<div class="container" id="product3">
+  <div class="product-image">
+    <img src="cake.jpg" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">Cake</h1>
+    <p class="product-description">
+      Layers of moist chocolate sponge, infused with cherry liqueur, draped
+      in chocolate ganache, and crowned with plump cherries.
+    </p>
+    <p class="product-price">Rs. 249.99/-</p>
+    <button class="add-to-cart" onclick="addToCart('Cake', 249.99)">Add to Cart</button>
+  </div>
+</div>
+
+<div class="container" id="product4">
+  <div class="product-image">
+    <img src="cookies.jpg" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">Dark Cookie</h1>
+    <p class="product-description">
+      Perfect for satisfying sweet cravings, our Cookie is a delectable
+      treat that promises pure indulgence in every bite.
+    </p>
+    <p class="product-price">Rs.79.99/-</p>
+    <button class="add-to-cart" onclick="addToCart('Dark Cookie', 79.99)">Add to Cart</button>
+  </div>
+</div>
+
+<div class="container" id="product5">
+  <div class="product-image">
+    <img src="bakeimg1.webp" alt="Product Image">
+  </div>
+  <div class="product-details">
+    <h1 class="product-title">Pastry</h1>
+    <p class="product-description">
+      Introducing our Pastry, a culinary marvel that reimagines the classic
+      cake in a delightful pastry form.
+    </p>
+    <p class="product-price">Rs. 49.99/-</p>
+    <button class="add-to-cart" onclick="addToCart('Pastry', 49.99)">Add to Cart</button>
+  </div>
+</div>
+
+
+<!-- Floating cart button -->
+<button class="cart-button" onclick="toggleCartPopup()">Cart</button>
+
+<!-- Cart popup -->
+<div class="cart-popup" id="cartPopup">
+  
+  <button onclick="toggleCartPopup()" style="background-color: #c82333; color: #fff; border: solid black 2px; border-radius: 25%; position: absolute; top: 10px; right: 10px; padding: 5px 10px; cursor: pointer;">X</button>
+  <h2>Your Packages </h2>
+  <ul class="cart-items-list" id="cartItemsList"></ul>
+  <div class="cart-total">Total: <span id="cartTotal">Rs. 0.00</span></div>
+  <form action="orders.php" method="post" id="loginForm">
+    <div class="container">
+      <div class="login-form">
+      
+      
+          <div class="input-field">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" required  />
+          </div></div>
+        </form>
+  <button class="-btn" onclick="checkout()">Checkout</button>
+</div>
+
+
+<script>
+  let cart = []; // Define cart array
+  const cartPopup = document.getElementById("cartPopup");
+
+  function toggleCartPopup() {
+    if (cartPopup.style.display === "none" || cartPopup.style.display === "") {
+      renderCart();
+      cartPopup.style.display = "block";
+    } else {
+      cartPopup.style.display = "none";
+    }
+  }
+
+  function addToCart(productTitle, productPrice) {
+    let existingItem = cart.find(item => item.title === productTitle);
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cart.push({ title: productTitle, price: productPrice, quantity: 1 });
+    }
+    renderCart();
+  }
+
+  function removeFromCart(productTitle) {
+    cart = cart.filter(item => item.title !== productTitle);
+    renderCart();
+  }
+
+  function updateQuantity(productTitle, newQuantity) {
+    let item = cart.find(item => item.title === productTitle);
+    if (item) {
+      item.quantity = newQuantity;
+    }
+    renderCart();
+  }
+
+  function renderCart() {
+    const cartItemsList = document.getElementById("cartItemsList");
+    const cartTotal = document.getElementById("cartTotal");
+    cartItemsList.innerHTML = "";
+    let totalPrice = 0;
+    cart.forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("cart-item");
+      const titleSpan = document.createElement("span");
+      titleSpan.textContent = item.title;
+      titleSpan.classList.add("cart-item-title");
+      listItem.appendChild(titleSpan);
+
+      const quantityInput = document.createElement("input");
+      quantityInput.type = "number";
+      quantityInput.min = 1;
+      quantityInput.value = item.quantity;
+      quantityInput.classList.add("cart-item-quantity");
+      quantityInput.addEventListener("change", function () {
+        updateQuantity(item.title, parseInt(this.value));
+      });
+      listItem.appendChild(quantityInput);
+
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.classList.add("cart-item-delete");
+      deleteButton.addEventListener("click", function () {
+        removeFromCart(item.title);
+      });
+      listItem.appendChild(deleteButton);
+
+      cartItemsList.appendChild(listItem);
+      totalPrice += item.price * item.quantity;
+    });
+
+    cartTotal.textContent = `$. ${totalPrice.toFixed(2)}`;
+  }
+
+  function checkout() {
+    
+    alert("Your Order is Placed!!");
+    cartPopup.style.display = "none";
+
+  }
+
+  function Checkout() {
+    
+   
+    cartPopup.style.display = "none";
+
+  }
+
+</script>
+
+</body>
+</html>

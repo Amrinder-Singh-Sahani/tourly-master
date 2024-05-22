@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login or Sign Up</title>
+  <link rel="stylesheet" href="login.css"> <!-- Include your custom CSS -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+
+<body style="background-color: hsl(214, 57%, 51%);">
+
+  <div class="bcg-img">
+
+    <div class="login-container">
+      <form class="login-form" id="login-form" action = "login.php" method = "post">
+        <h2 class = "login-head">Login</h2>
+        <div class="input-wrapper">
+        <!-- <div class="signup-wrapper"> -->
+          <label for="username" class="input-label">Email</label>
+          <input type="text" id="email" name="email" class="input-field">
+        </div>
+        <div class="input-wrapper">
+        <!-- <div class="signup-wrapper"> -->
+          <label for="password" class="input-label">Password</label>
+          <input type="password" id="password" name="password" class="input-field">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p>Don't have an account? <a href="new_signup.html" id="signup-link">Sign up</a></p>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- 
+  <div class="signup-container" style="display: none;">
+    <form class="signup-form" id="signup-form">
+      <h2>Sign Up</h2>
+      <div class="input-wrapper">
+        <label for="new-username" class="input-label">Username</label>
+        <input type="text" id="new-username" name="new-username" class="input-field" required>
+      </div>
+      <div class="input-wrapper">
+        <label for="new-password" class="input-label">Password</label>
+        <input type="password" id="new-password" name="new-password" class="input-field" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+  </div> -->
+
+<!-- <script>
+    // Toggle between login and signup forms
+    document.getElementById("signup-link").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("signup-form").style.display = "block";
+    });
+
+    document.getElementById("login-link").addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("login-form").style.display = "block";
+      document.getElementById("signup-form").style.display = "none";
+    });
+  </script>
+</body>
+</html> -->
