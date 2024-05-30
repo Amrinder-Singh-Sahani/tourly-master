@@ -43,7 +43,7 @@ if(mysqli_num_rows($result)>0)
     // $sql = "UPDATE `tourly`.`booking` SET `product` = '$getProduct\r\n$newproduct' WHERE `booking`.`email` = $email;";
     // $result = mysqli_query($conn,$sql);
 
-
+    
     $prevProduct = "SELECT product,price FROM booking WHERE email = '$email'";
     $getProductResult = mysqli_query($conn,$prevProduct);
     $row = mysqli_fetch_assoc($getProductResult);
